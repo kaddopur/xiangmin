@@ -1,0 +1,24 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "鄉民之眼",
+  "version": "3.0",
+
+  // Recommended
+  "description": "A plain text description",
+
+
+  // Optional
+  "author": "kaddopur",
+  "content_scripts": [
+    {
+      "matches": ["https://tw.yahoo.com/*"],
+      "js": ["vendor/React/react.js", "assets/javascripts/build/components/viewer.js","assets/javascripts/build/sfacg.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "homepage_url": "http://path/to/homepage",
+  "web_accessible_resources": [
+    "vendor/React/*"
+  ]
+}
