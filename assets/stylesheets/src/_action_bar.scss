@@ -3,7 +3,9 @@
   height: 56px;
   padding: 4px 16px;
   box-sizing: border-box;
+  background-color: $color-primary-500;
   & > [class*='text'] {
     line-height: 48px;
+    color: white;
   }
 }
