@@ -15,11 +15,11 @@ var episodeStub = {
   prevEpisode: {
     name: '307话',
     url: 'http://comic.sfacg.com/HTML/NZJD/307/'
-  }
+  },
   url: 'http://comic.sfacg.com/HTML/NZJD/308/'
 };
 
 React.renderComponent(
-  Avatar({people: people}),
-  document.getElementById('cbleft')
+  Episode({episode: episodeStub}),
+  document.querySelectorAll('body')[0]
 );

@@ -1,13 +1,26 @@
 /** @jsx React.DOM */
-var Avatar = React.createClass({
+var Episode = React.createClass({
   render: function(){
-    var peopleGreetings = this.props.people.map(function(person){
+    var pageNodes = this.props.episode.pages.map(function(page){
       return (
-        <h1>Hello, {person}!</h1>
+        <Page page={page} />
       );
     });
     return (
-      <div>{peopleGreetings}</div>
+      <div>
+        <h1>{this.props.episode.comic.name} {this.props.episode.name}</h1>
+        <div className="episode">
+          {pageNodes}
+        </div>
+      </div>
+    );
+  }
+});
+
+var Page = React.createClass({
+  render: function(){
+    return (
+      <img src={this.props.page} />
     );
   }
 });

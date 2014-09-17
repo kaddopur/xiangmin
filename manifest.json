@@ -12,7 +12,7 @@
   "author": "kaddopur",
   "content_scripts": [
     {
-      "matches": ["https://tw.yahoo.com/*"],
+      "matches": ["http://comic.sfacg.com/*/*/*"],
       "js": ["vendor/React/react.js", "assets/javascripts/build/components/viewer.js","assets/javascripts/build/sfacg.js"]
     }
   ],
