@@ -20,6 +20,6 @@ var episodeStub = {
 };
 
 React.renderComponent(
-  Episode({episode: episodeStub}),
+  Viewer({episode: episodeStub}),
   document.querySelectorAll('body')[0]
 );

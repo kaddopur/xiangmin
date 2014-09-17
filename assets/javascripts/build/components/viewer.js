@@ -1,4 +1,26 @@
 /** @jsx React.DOM */
+var Viewer = React.createClass({displayName: 'Viewer',
+  render: function() {
+    return (
+      React.DOM.div({className: "viewer"}, 
+        ActionBar({episode: this.props.episode}), 
+        Episode({episode: this.props.episode})
+      )
+    );
+  }
+});
+
+var ActionBar = React.createClass({displayName: 'ActionBar',
+  render: function() {
+    return (
+      React.DOM.div({className: "action-bar"}, 
+        React.DOM.span({className: "action-icon action-icon-nav"}, React.DOM.i({className: "fa fa-navicon"})), 
+        React.DOM.span({className: "text-title"}, this.props.episode.comic.name, " ", this.props.episode.name)
+      )
+    );
+  }
+});
+
 var Episode = React.createClass({displayName: 'Episode',
   render: function(){
     var pageNodes = this.props.episode.pages.map(function(page){
@@ -7,11 +29,8 @@ var Episode = React.createClass({displayName: 'Episode',
       );
     });
     return (
-      React.DOM.div(null, 
-        React.DOM.h1(null, this.props.episode.comic.name, " ", this.props.episode.name), 
-        React.DOM.div({className: "episode"}, 
-          pageNodes
-        )
+      React.DOM.div({className: "episode"}, 
+        pageNodes
       )
     );
   }
@@ -20,7 +39,9 @@ var Episode = React.createClass({displayName: 'Episode',
 var Page = React.createClass({displayName: 'Page',
   render: function(){
     return (
-      React.DOM.img({src: this.props.page})
+      React.DOM.div({className: "page"}, 
+        React.DOM.img({src: this.props.page})
+      )
     );
   }
 });
