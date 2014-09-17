@@ -1,0 +1,9 @@
+.action-bar {
+  display: fixed;
+  height: 56px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  & > [class*='text'] {
+    line-height: 48px;
+  }
+}

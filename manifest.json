@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["http://comic.sfacg.com/*/*/*"],
-      "js": ["vendor/React/react.js", "assets/javascripts/build/components/viewer.js","assets/javascripts/build/sfacg.js"]
+      "js": ["bower_components/react/react.js", "assets/javascripts/build/components/viewer.js","assets/javascripts/build/sfacg.js"]
     }
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
