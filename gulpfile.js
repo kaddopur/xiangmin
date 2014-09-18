@@ -10,7 +10,16 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    react = require('gulp-react');
+    react = require('gulp-react'),
+    embedlr = require("gulp-embedlr");
+
+
+gulp.task('pages', function(){
+  return gulp.src('src/**/*.html')
+    .pipe(embedlr())
+    .pipe(gulp.dest('dist'))
+    .pipe(notify({ message: 'Pages task complete' }));
+});
 
 
 gulp.task('styles', function() {
@@ -45,18 +54,20 @@ gulp.task('images', function() {
 
 
 gulp.task('clean', function(cb) {
-  del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
+  del(['dist', 'dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
 });
 
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images');
+  gulp.start('pages', 'styles', 'scripts', 'images');
 });
-
 
 // Watch
 gulp.task('watch', function() {
  
+  // Watch .html files
+  gulp.watch('src/**/*.html', ['pages']);
+
   // Watch .scss files
   gulp.watch('src/styles/**/*.scss', ['styles']);
  
@@ -67,7 +78,7 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
  
   // Create LiveReload server
-  livereload.listen(8000);
+  livereload.listen();
  
   // Watch any files in dist/, reload on change
   gulp.watch(['dist/**']).on('change', livereload.changed);
