@@ -1,12 +1,8 @@
-html {
+html, body {
   height: 100%;
 }
 
-body {
-  height: calc(100% - 56px);
-}
-
 #content {
-  padding-top: 157px;
+  height: calc(100% - 56px);
 }
 
