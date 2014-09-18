@@ -16,12 +16,12 @@
       "css": [
         "bower_components/normalize-css/normalize.css",
         "bower_components/components-font-awesome/css/font-awesome.min.css",
-        "assets/stylesheets/build/viewer.css"
+        "dist/assets/css/viewer.css"
       ],
       "js": [
         "bower_components/react/react.js", 
-        "assets/javascripts/build/components/viewer.js",
-        "assets/javascripts/build/sfacg.js"
+        "dist/assets/js/components/viewer.js",
+        "dist/assets/js/sfacg.js"
       ]
     }
   ],
