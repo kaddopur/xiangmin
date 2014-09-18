@@ -1,13 +1,47 @@
 /** @jsx React.DOM */
-var Avatar = React.createClass({displayName: 'Avatar',
+var Viewer = React.createClass({displayName: 'Viewer',
+  render: function() {
+    return (
+      React.DOM.div({className: "viewer"}, 
+        ActionBar({episode: this.props.episode}), 
+        Episode({episode: this.props.episode})
+      )
+    );
+  }
+});
+
+var ActionBar = React.createClass({displayName: 'ActionBar',
+  render: function() {
+    return (
+      React.DOM.div({className: "action-bar"}, 
+        React.DOM.span({className: "action-icon action-icon-nav"}, React.DOM.i({className: "fa fa-navicon"})), 
+        React.DOM.span({className: "text-title"}, this.props.episode.comic.name, " ", this.props.episode.name)
+      )
+    );
+  }
+});
+
+var Episode = React.createClass({displayName: 'Episode',
   render: function(){
-    var peopleGreetings = this.props.people.map(function(person){
+    var pageNodes = this.props.episode.pages.map(function(page){
       return (
-        React.DOM.h1(null, "Hello, ", person, "!")
+        Page({page: page})
       );
     });
     return (
-      React.DOM.div(null, peopleGreetings)
+      React.DOM.div({className: "episode"}, 
+        pageNodes
+      )
+    );
+  }
+});
+
+var Page = React.createClass({displayName: 'Page',
+  render: function(){
+    return (
+      React.DOM.div({className: "page"}, 
+        React.DOM.img({src: this.props.page})
+      )
     );
   }
 });

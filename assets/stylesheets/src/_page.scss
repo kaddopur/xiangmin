@@ -1,0 +1,11 @@
+.page {
+  @extend .z-depth-1;
+  position: relative;
+  background-color: white;
+  margin: 0 16px 2px;
+  text-align: center;
+  img {
+    max-width: 100%;
+    min-width: 800px;
+  }
+}
