@@ -1,0 +1,28 @@
+.action-bar {
+  @extend .z-depth-2;
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  background-color: $color-primary-500;
+  z-index: 100;
+  & > [class*='text'] {
+    line-height: 48px;
+    color: white;
+  }
+}
+
+.action-icon {
+  @extend .btn-icon;
+  display: inline-block;
+  i {
+    color: $color-primary-700;
+  }
+  &:active {
+    background-color: $color-primary-100;
+  }
+  &.action-icon-nav {
+    margin-right: 8px;
+  }
+}
