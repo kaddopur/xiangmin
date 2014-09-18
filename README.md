@@ -1,4 +1,4 @@
 xiangmin
 ========
 
-A online comic viewer
+An online comic viewer
