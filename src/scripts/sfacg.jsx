@@ -25,13 +25,14 @@ hostName = 'http://comic.sfacg.com';
 
 $.get(hostName + utilityUrl, function(data){
   eval(data);
+
   episode = {
     comic: {
       coverUrl: '',
       name: comicName,
-      url: ''
+      url: $($('.redfont_input')[0]).attr('href')
     },
-    name: '',
+    name: $('.Reduction_left').text().match(/>\w*([^>]*)$/)[1].trim(),
     nextEpisode: {
       name: '',
       url: hostName + nextVolume
@@ -44,15 +45,17 @@ $.get(hostName + utilityUrl, function(data){
     url: location.href
   }
 
-  // React.renderComponent(
-  //   <Viewer episode={episode} />,
-  //   document.querySelectorAll('body')[0]
-  // );
+  console.log(episode);
 
-  // $("img.lazy").lazyload({         
-  //   effect : "fadeIn",
-  //   threshold : 3000
-  // });
+  React.renderComponent(
+    <Viewer episode={episode} />,
+    document.querySelectorAll('body')[0]
+  );
+
+  $("img.lazy").lazyload({         
+    effect : "fadeIn",
+    threshold : 3000
+  });
 });
 
 

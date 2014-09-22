@@ -11,6 +11,7 @@
 .btn-icon {
   @extend .no-select;
   display: inline-block;
+  vertical-align: top;
   width: 24px;
   height: 24px;
   padding: 12px;
