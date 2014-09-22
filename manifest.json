@@ -19,6 +19,7 @@
         "dist/assets/css/viewer.css"
       ],
       "js": [
+        "bower_components/jquery/dist/jquery.min.js",
         "bower_components/react/react.js", 
         "dist/assets/js/components/viewer.js",
         "dist/assets/js/sfacg.js"
