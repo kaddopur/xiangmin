@@ -2,7 +2,7 @@
 var Viewer = React.createClass({
   render: function() {
     return (
-      <div className="viewer">
+      <div className="xm-viewer">
         <ActionBar episode={this.props.episode} />
         <Episode episode={this.props.episode} />
       </div>
@@ -22,8 +22,15 @@ var ActionBar = React.createClass({
 });
 
 var Episode = React.createClass({
+  getInitialState: function(){
+    return {
+      pages: [
+        'http://coldpic.sfacg.com/Pic/OnlineComic4/NZJD/308/001_0498.png'  
+      ]
+    };
+  },
   render: function(){
-    var pageNodes = this.props.episode.pages.map(function(page){
+    var pageNodes = this.state.pages.map(function(page){
       return (
         <Page page={page} />
       );
