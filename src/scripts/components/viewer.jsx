@@ -5,6 +5,7 @@ var Viewer = React.createClass({
       <div className="viewer">
         <ActionBar episode={this.props.episode} />
         <Episode episode={this.props.episode} />
+        <Fab nextEpisode={this.props.episode.nextEpisode} />
       </div>
     );
   }
@@ -42,6 +43,14 @@ var Page = React.createClass({
       <div className="page">
         <img className="lazy" data-original={this.props.page}/>
       </div>
+    );
+  }
+});
+
+var Fab = React.createClass({
+  render: function(){
+    return (
+      <a href={this.props.nextEpisode.url} className="fab"><i className="fa fa-arrow-right"></i></a>
     );
   }
 });

@@ -27,27 +27,32 @@ $.get(hostName + utilityUrl, function(data){
   eval(data);
   episode = {
     comic: {
-      name: comicName
+      coverUrl: '',
+      name: comicName,
+      url: ''
     },
+    name: '',
     nextEpisode: {
+      name: '',
       url: hostName + nextVolume
     },
     pages: picAy,
     prevEpisode: {
+      name: '',
       url: preVolume
     },
     url: location.href
   }
 
-  React.renderComponent(
-    <Viewer episode={episode} />,
-    document.querySelectorAll('body')[0]
-  );
+  // React.renderComponent(
+  //   <Viewer episode={episode} />,
+  //   document.querySelectorAll('body')[0]
+  // );
 
-  $("img.lazy").lazyload({         
-    effect : "fadeIn",
-    threshold : 3000
-  });
+  // $("img.lazy").lazyload({         
+  //   effect : "fadeIn",
+  //   threshold : 3000
+  // });
 });
 
 

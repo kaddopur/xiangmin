@@ -1,0 +1,22 @@
+.fab {
+  @extend .z-depth-2;
+  background-color: $color-accent-400;
+  color: $color-dark-gray !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  text-align: center;
+  i {
+    font-size: 16px;
+    line-height: 48px;
+  }
+  &:active {
+    @extend .z-depth-3;
+  }
+  &:hover {
+    background-color: $color-accent-100;
+  }
+}
