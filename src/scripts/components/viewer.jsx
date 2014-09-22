@@ -40,7 +40,7 @@ var Page = React.createClass({
   render: function(){
     return (
       <div className="page">
-        <img src={this.props.page} />
+        <img className="lazy" data-original={this.props.page}/>
       </div>
     );
   }

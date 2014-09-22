@@ -43,4 +43,12 @@ $.get(hostName + utilityUrl, function(data){
     <Viewer episode={episode} />,
     document.querySelectorAll('body')[0]
   );
+
+  $("img.lazy").lazyload({         
+    effect : "fadeIn",
+    threshold : 3000
+  });
 });
+
+
+
