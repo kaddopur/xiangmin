@@ -1,5 +1,11 @@
 /** @jsx React.DOM */
 var Viewer = React.createClass({
+  componentDidMount: function(){
+    $("img.lazy").lazyload({         
+      effect : "fadeIn",
+      threshold : 3000
+    });
+  },
   render: function() {
     return (
       <div className="viewer">
