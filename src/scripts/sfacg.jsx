@@ -19,7 +19,37 @@ var episodeStub = {
   url: 'http://comic.sfacg.com/HTML/NZJD/308/'
 };
 
-React.renderComponent(
-  <Viewer episode={episodeStub} />,
-  document.querySelectorAll('body')[0]
-);
+
+utilityUrl = $($("script[src^='/Util']")[1]).attr('src');
+hostName = 'http://comic.sfacg.com';
+
+$.get(hostName + utilityUrl, function(data){
+  eval(data);
+
+  episode = {
+    comic: {
+      coverUrl: '',
+      name: comicName,
+      url: $($('.redfont_input')[0]).attr('href')
+    },
+    name: $('.Reduction_left').text().match(/>\w*([^>]*)$/)[1].trim(),
+    nextEpisode: {
+      name: '',
+      url: hostName + nextVolume
+    },
+    pages: picAy,
+    prevEpisode: {
+      name: '',
+      url: preVolume
+    },
+    url: location.href
+  }
+
+  React.renderComponent(
+    <Viewer episode={episode} />,
+    document.querySelectorAll('body')[0]
+  );
+});
+
+
+

@@ -5,20 +5,22 @@
   "version": "3.0",
 
   // Recommended
-  "description": "A plain text description",
+  "description": "An online comic viewer",
 
 
   // Optional
   "author": "kaddopur",
   "content_scripts": [
     {
-      "matches": ["http://comic.sfacg.com/*/*/*"],
+      "matches": ["http://comic.sfacg.com/HTML/*/*/*"],
       "css": [
         "bower_components/normalize-css/normalize.css",
         "bower_components/components-font-awesome/css/font-awesome.min.css",
         "dist/assets/css/viewer.css"
       ],
       "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/jquery.lazyload/jquery.lazyload.min.js",
         "bower_components/react/react.js", 
         "dist/assets/js/components/viewer.js",
         "dist/assets/js/sfacg.js"
