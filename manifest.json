@@ -30,6 +30,7 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "homepage_url": "http://path/to/homepage",
   "web_accessible_resources": [
-    "vendor/React/*"
+    "vendor/React/*",
+    "bower_components/components-font-awesome/fonts/*"
   ]
 }

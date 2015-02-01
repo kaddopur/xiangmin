@@ -51,5 +51,9 @@ $.get(hostName + utilityUrl, function(data){
   );
 });
 
-
-
+var fa = document.createElement('style');
+    fa.type = 'text/css';
+    fa.textContent = '@font-face { font-family: FontAwesome; src: url("'
+        + chrome.extension.getURL('bower_components/components-font-awesome/fonts/fontawesome-webfont.woff')
+        + '"); }';
+document.head.appendChild(fa);
